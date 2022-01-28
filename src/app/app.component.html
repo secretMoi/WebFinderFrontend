@@ -18,12 +18,13 @@
                 (click)="searchProducts()">
           Chercher
         </button>
-        <button type="button" class="btn btn-default" (click)="togglePriceOrder()">
-          Prix
-          <span class="caret-up" *ngIf="isPricerOrderAscending"></span>
-          <span class="caret-down" *ngIf="!isPricerOrderAscending"></span>
-        </button>
+        <hr>
       </div>
+      <button type="button" class="btn btn-default" (click)="togglePriceOrder()">
+        Prix
+        <span class="caret-up" *ngIf="isPricerOrderAscending"></span>
+        <span class="caret-down" *ngIf="!isPricerOrderAscending"></span>
+      </button>
     </div>
   </div>
 </div>
@@ -42,6 +43,7 @@
       <ul class="list-group shadow" *ngFor="let product of products">
         <!-- list group item-->
         <li class="list-group-item">
+          <a href="{{ product.url }}">
           <!-- Custom content-->
           <div class="media align-items-lg-center flex-column flex-lg-row p-3">
             <div class="media-body order-2 order-lg-1">
@@ -53,12 +55,11 @@
                 <h6 class="font-weight-bold my-2">{{ product.price }}€</h6>
               </div>
             </div>
-            <a href="{{ product.url }}" class="ml-lg-5 order-1 order-lg-2">
-              <img src="{{ product.imageUrl}}" alt="{{ product.name }}" width="200">
-            </a>
-          </div> <!-- End -->
-        </li> <!-- End -->
-      </ul> <!-- End -->
+            <img src="{{ product.imageUrl}}" alt="{{ product.name }}" width="200" class="ml-lg-5 order-1 order-lg-2">
+          </div>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
