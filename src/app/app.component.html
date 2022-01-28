@@ -1,0 +1,7 @@
+<ul class="list-group" *ngIf="products">
+  <li class="list-group-item" *ngFor="let product of products">
+    {{ product.name }}
+  </li>
+</ul>
+
+<button class="btn btn-primary" (click)="showConfig()">Get 3090</button>
