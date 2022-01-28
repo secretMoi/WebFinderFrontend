@@ -1,7 +1,34 @@
-<div class="container py-5">
-  <div class="row text-center text-white mb-5">
+<div class="row mb-5">
+  <div class="col-lg-8 mx-auto">
+    <h5 class="font-weight-light mb-4 font-italic text-white">Custom rounded search bars with input group</h5>
+    <div class="bg-white p-5 rounded shadow">
+      <form action="">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+          <div class="input-group">
+            <input type="search" placeholder="Produit à rechercher..." aria-describedby="button-addon1" class="form-control border-0 bg-light"
+                   (keydown.enter)="searchProducts()" #productToSearchInput>
+            <div class="input-group-append">
+              <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="text-right">
+        <button style="align-self: flex-end" class="btn btn-primary btn-lg"
+                (click)="searchProducts()">
+          Chercher
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container py-5" *ngIf="products.length > 0">
+  <div class="row text-center mb-5">
     <div class="col-lg-7 mx-auto">
-      <h1 class="display-4">Product List</h1>
+      <h1 class="display-4">Liste des produits</h1>
     </div>
   </div>
   <div class="row">
@@ -27,10 +54,6 @@
           </div> <!-- End -->
         </li> <!-- End -->
       </ul> <!-- End -->
-
-      <div class="text-right">
-        <button style="align-self: flex-end" class="btn btn-primary btn-lg" (click)="showConfig()">Get 3090</button>
-      </div>
     </div>
   </div>
 </div>
