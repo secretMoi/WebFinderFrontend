@@ -18,6 +18,11 @@
                 (click)="searchProducts()">
           Chercher
         </button>
+        <button type="button" class="btn btn-default" (click)="togglePriceOrder()">
+          Prix
+          <span class="caret-up" *ngIf="isPricerOrderAscending"></span>
+          <span class="caret-down" *ngIf="!isPricerOrderAscending"></span>
+        </button>
       </div>
     </div>
   </div>
