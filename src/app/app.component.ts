@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {HttpService} from "./http.service";
 import {Product} from "./model/product.model";
 
@@ -8,13 +8,14 @@ import {Product} from "./model/product.model";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('productToSearchInput', { static: false }) productToSearchInputReference!: ElementRef;
+
   products: Product[] = [];
 
-  constructor(private httpService: HttpService) {
-  }
+  constructor(private httpService: HttpService) {}
 
-  showConfig() {
-    this.httpService.searchProducts()
+  searchProducts() {
+    this.httpService.searchProducts(this.productToSearchInputReference.nativeElement.value)
       .subscribe((products: Product[]) => this.products = products);
   }
 }
