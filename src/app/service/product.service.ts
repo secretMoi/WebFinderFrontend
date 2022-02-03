@@ -6,7 +6,8 @@ import {Product} from "../model/product.model";
 
 @Injectable()
 export class ProductService {
-  products: Product[] = [];
+  private _products: Product[] = [];
+  private _originalProducts: Product[] = [];
 
   constructor() { }
 
@@ -30,4 +31,23 @@ export class ProductService {
     }
   }
 
+  selectOnlyProductsInStock(onlyInStock: boolean) {
+    console.log(onlyInStock);
+    console.log(onlyInStock);
+    if(onlyInStock) {
+      this._products = this._originalProducts.filter(product => product.isInStock);
+    }
+    else {
+      this._products = this._originalProducts;
+    }
+  }
+
+  get products(): Product[]{
+    return this._products;
+  }
+
+  set products(products: Product[]) {
+    this._products = products;
+    this._originalProducts = products;
+  }
 }

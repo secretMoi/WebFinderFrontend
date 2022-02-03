@@ -20,11 +20,21 @@
         </button>
         <hr>
       </div>
+
       <button type="button" class="btn btn-default" (click)="togglePriceOrder()">
         Prix
         <span class="caret-up" *ngIf="isPriceOrderAscending"></span>
         <span class="caret-down" *ngIf="!isPriceOrderAscending"></span>
       </button>
+
+      <span class="mx-5">
+        En stock
+        <label class="switch">
+          <input type="checkbox" [checked]="isInStock" (change)="toggleIsInStock()">
+          <span class="slider round"></span>
+        </label>
+      </span>
+
     </div>
   </div>
 </div>
