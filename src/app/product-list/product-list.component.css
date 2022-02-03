@@ -26,3 +26,19 @@ a {
   text-decoration: none;
   color: currentColor;
 }
+
+.isInStockCircle {
+  height: 25px;
+  width: 25px;
+  background-color: #009900;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.isNotInStockCircle {
+  height: 25px;
+  width: 25px;
+  background-color: #cc0000;
+  border-radius: 50%;
+  display: inline-block;
+}
