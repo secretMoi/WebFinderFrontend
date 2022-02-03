@@ -1,0 +1,21 @@
+.caret-up{
+  border-bottom: 9px solid #cc0000;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: center;
+  width: 0;
+}
+
+.caret-down{
+  border-top: 9px solid #009900;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: center;
+  width: 0;
+}
