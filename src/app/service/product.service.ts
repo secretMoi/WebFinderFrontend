@@ -32,8 +32,6 @@ export class ProductService {
   }
 
   selectOnlyProductsInStock(onlyInStock: boolean) {
-    console.log(onlyInStock);
-    console.log(onlyInStock);
     if(onlyInStock) {
       this._products = this._originalProducts.filter(product => product.isInStock);
     }
