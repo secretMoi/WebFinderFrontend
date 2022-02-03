@@ -12,6 +12,7 @@ export class SearchBarComponent implements OnInit {
   @ViewChild('productToSearchInput', { static: false }) productToSearchInputReference!: ElementRef;
 
   isPriceOrderAscending: boolean = true;
+  isInStock: boolean = false;
 
   constructor(private httpService: HttpService, private productService: ProductService) { }
 
@@ -34,5 +35,15 @@ export class SearchBarComponent implements OnInit {
     this.isPriceOrderAscending = isPriceOrderAscending;
 
     this.productService.orderProducts(this.isPriceOrderAscending);
+  }
+
+  toggleIsInStock() {
+    this.setIsInStock(!this.isInStock);
+  }
+
+  setIsInStock(isInStock: boolean) {
+    this.isInStock = isInStock;
+
+    this.productService.selectOnlyProductsInStock(this.isInStock);
   }
 }
