@@ -1,0 +1,30 @@
+<div class="row mb-5">
+  <div class="col-lg-8 mx-auto">
+    <h5 class="font-weight-light mb-4 font-italic text-white"></h5>
+    <div class="bg-white p-5 rounded shadow">
+      <form action="">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+          <div class="input-group">
+            <input type="search" placeholder="Produit à rechercher..." aria-describedby="button-addon1" class="form-control border-0 bg-light"
+                   (keydown.enter)="searchProducts()" #productToSearchInput>
+            <div class="input-group-append">
+              <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="text-right">
+        <button style="align-self: flex-end" class="btn btn-primary btn-lg"
+                (click)="searchProducts()">
+          Chercher
+        </button>
+        <hr>
+      </div>
+      <button type="button" class="btn btn-default" (click)="togglePriceOrder()">
+        Prix
+        <span class="caret-up" *ngIf="isPriceOrderAscending"></span>
+        <span class="caret-down" *ngIf="!isPriceOrderAscending"></span>
+      </button>
+    </div>
+  </div>
+</div>
