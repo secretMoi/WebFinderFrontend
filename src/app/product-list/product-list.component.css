@@ -14,9 +14,9 @@
   color: #aaa
 }
 
-img {
-  height: 170px;
-  width: 140px
+img.productImage {
+  width: 140px;
+  aspect-ratio: inherit; /* todo */
 }
 
 

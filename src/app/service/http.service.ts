@@ -24,4 +24,17 @@ export class HttpService {
     });
   }
 
+  // monitorProduct(productToMonitor: number) {
+  //   const options = {
+  //     headers: new HttpHeaders({
+  //       'Access-Control-Allow-Origin':'*'
+  //     })
+  //   };
+  //
+  //   return this.http.post('http://localhost:5092/Monitor', {
+  //     headers : {
+  //       'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+  //     }
+  //   }).subscribe();
+  // }
 }
