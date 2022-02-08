@@ -10,12 +10,11 @@
       <ul class="list-group shadow" *ngFor="let product of productService.products">
         <!-- list group item-->
         <li class="list-group-item">
-          <a href="{{ product.url }}">
             <!-- Custom content-->
             <div class="media align-items-lg-center flex-column flex-lg-row p-3">
               <div class="media-body order-2 order-lg-1">
                 <h5 class="mt-0 font-weight-bold mb-2">
-                  {{ product.name }}
+                  <a href="{{ product.url }}">{{ product.name }}</a>
                 </h5>
                 <p class="font-italic text-muted mb-0 small">{{ product.description }}</p>
                 <div class="d-flex align-items-center justify-content-start mt-1">
@@ -24,11 +23,15 @@
                     <span class="isInStockCircle" *ngIf="product.isInStock"></span>
                     <span class="isNotInStockCircle" *ngIf="!product.isInStock"></span>
                   </div>
+                  <div class="mx-3">
+                    <img src="/assets/images/search.svg" width="32px" (click)="addMonitor(product)">
+                  </div>
                 </div>
               </div>
-              <img src="{{ product.imageUrl}}" alt="{{ product.name }}" width="200" class="ml-lg-5 order-1 order-lg-2">
+              <a href="{{ product.url }}">
+                <img src="{{ product.imageUrl}}" alt="{{ product.name }}" width="200" class="ml-lg-5 order-1 order-lg-2 productImage">
+              </a>
             </div>
-          </a>
         </li>
       </ul>
     </div>
