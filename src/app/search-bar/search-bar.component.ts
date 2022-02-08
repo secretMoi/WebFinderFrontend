@@ -24,6 +24,7 @@ export class SearchBarComponent implements OnInit {
       .subscribe((products: Product[]) => {
         this.productService.products = products;
         this.setPriceOrder(true);
+        this.setIsInStock(this.isInStock);
       });
   }
 
